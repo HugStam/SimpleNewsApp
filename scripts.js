@@ -35,6 +35,13 @@ function displayNews(articles) {
         link.href = article.url;
         articleDiv.appendChild(link);
 
+        // append a photo to the articleDiv
+        const image = document.createElement('img');
+        image.src = article.urlToImage;
+        image.alt = article.title;
+        image.classList.add('thumbnail');
+        articleDiv.appendChild(image);
+
         newsDev.appendChild(articleDiv);
     }
 }
