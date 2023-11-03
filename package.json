@@ -8,7 +8,7 @@
     "start": "parcel --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dexter",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.10.2"
