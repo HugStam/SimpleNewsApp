@@ -24,6 +24,17 @@ function displayNews(articles) {
         title.textContent = article.title;
         articleDiv.appendChild(title);
 
+        //append a discription
+        const description = document.createElement('p');
+        description.textContent = article.description;
+        articleDiv.appendChild(description);
+
+        // append the content to the articleDiv
+        const link = document.createElement('a');
+        link.textContent = 'Read More';
+        link.href = article.url;
+        articleDiv.appendChild(link);
+
         newsDev.appendChild(articleDiv);
     }
 }
