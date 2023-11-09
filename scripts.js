@@ -6,16 +6,19 @@ async function fetchNews() {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
+        //console.log(data);
         displayNews(data.articles);
-    }catch (error) {
-        console.error('There was an error!')
+        return data.articles;
+    }
+    catch(error) {
+        console.error("There was an error", error);
+        return [];
     }
 }
 
 
 function displayNews(articles) {
-    const newsDev = document.querySelector('#news');
+    const newsDev = document.querySelector('#news');   
     for (const article of articles) {
         const articleDiv = document.createElement('div');
 
@@ -46,21 +49,22 @@ function displayNews(articles) {
     }
 }
 
-// the search feature
-function performSearch() {
-    const searchInput = document.querySelector('#searchInput');
-    const searchButton = document.querySelector('#searchButton');
-    searchInput.addEventListener('input', () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredArticles = article.filter(article => article.title.toLowerCase().includes(searchTerm));
-        // empty the newsDiv before showing the filtered articles
-        newsDev.innerHTML = '';
+function searchNews() {
+    let inputValue = document.getElementById("searchInput").value.trim().toLowerCase();
+    if (!inputValue) {
+        alert("Nothing Returned")
+        return;
+    }
+    fetchNews().then(articles => {
+        document.getElementById('news').innerHTML = '';
+        let filteredArticles = articles.filter(article => article.title.toLowerCase().includes(inputValue));
         displayNews(filteredArticles);
-    
-    });
+        });
 }
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('searchButton').addEventListener('click', searchNews);
+});
 
-searchButton.addEventListener('click', performSearch);
 
-//displayNews(filteredArticles);
+
 fetchNews();
