@@ -1,0 +1,45 @@
+.navBar {
+    .aboutme {
+        display: inline-block;
+        position: relative;
+        left: 100px;
+    }
+    .interest{
+        display: inline-block;
+        position: relative;
+        left: 200px;
+    }
+    
+    .musicsamples{
+        display: inline-block;
+        position: relative;
+        left: 300px;
+    }
+    
+    .work{
+        display: inline-block;
+        position: relative;
+        left: 400px;
+    }
+    
+    .contact{
+        display: inline-block;
+        position: relative;
+        left: 500px;
+    }
+
+}
+
+.newsDiv {
+        font-family: Arial, sans-serif;
+        background-color: #cad2d6;
+       text-align: center;
+    }
+.thumbnail {
+       width: 100px;
+       height: 100px;
+       border: 1px solid #ccc;
+       object-fit: cover;
+}
+
+

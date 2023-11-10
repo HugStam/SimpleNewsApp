@@ -4,27 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple News App</title>
-    <style>
-        body {
-             font-family: Arial, sans-serif;
-             background-color: #cad2d6;
-            text-align: center;
-        }
-        .thumbnail {
-            width: 100px;
-            height: 100px;
-            border: 1px solid #ccc;
-            object-fit: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/styles.css" />
+   
 </head>
 <body>
     <h1>Top News</h1>
+    <div class="navBar">
+        <nav>
+            <ul>
+                <div class="font-effect-fire">
+                    <div class="aboutme">
+                        <li><a href="#About Me" id="bbcnews">BBC News</a></li>
+                    </div>
+                    <div class="interest">
+                        <li><a href="#Interests" id="businessnews">Business</a></li>
+                    </div>
+                    <div class="musicsamples">
+                        <li><a href="#Music Samples" id="sportsnews">Sports</a></li>
+                    </div>
+                    <div class="work">
+                        <li><a href="#Work History" id="sciencenews">Science</a></li>
+                    </div>
+                    <div class="contact">
+                        <li><a href="#Contact Me" id="technologynews">Technology</a></li>
+                    </div>
+                </div>
+            </ul>
+        </nav>  
+    </div>
         <div>
             <input type="text" id="searchInput" placeholder="Search by title">
             <button id="searchButton">Search</button>
         </div>
-            <div id="news"></div>
+            <div id="news" class="newsDiv"></div>
     <script src="scripts.js" type="module"></script>
 </body>
 </html>
